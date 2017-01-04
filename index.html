@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="vendors/angular.min.js"></script>
+    <script type="text/javascript" src= "scripts/ngLaunchpad.js"></script>
+    <title>NG Launchpad</title>
+  </head>
+  <body ng-app = 'myApp'>
+    <div ng-controller = 'LaunchpadController'>
+      <h1>Favorite Poems</h1>
+      What is your favorite poem?<input type="text" placeholder = "Poem" ng-model = 'poemName'><input type="text" placeholder="Author" ng-model='authorName'>
+      <button type="button" ng-click = 'getPoemName()' >Add Poem to Library</button>
+      <p>Your Favorite Poem is: {{ poemName }}</p>
+      <p>Library of Favorite Poem:</p>
+      <ul>
+        <li ng-repeat = 'poem in favoritePoems'>
+          {{ poem.poem }} ({{ poem.author }})
+        </li>
+      </ul>
+
+
+    </div>
+
+  </body>
+</html>
